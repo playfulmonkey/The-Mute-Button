@@ -1,0 +1,6 @@
+__pycache__/ 
+*.pyc 
+ort-wasm-simd.wasm 
+ort-wasm.wasm 
+ort.min.js 
+transformers.min.js 

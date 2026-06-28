@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Mute Button",
+  "version": "1.0",
+  "description": "Filters hate speech from webpages using AI",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>", "http://127.0.0.1:5000/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["model/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
